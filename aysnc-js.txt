@@ -1,0 +1,25 @@
+aysnc javascript:
+
+Topics to cover
+    timeouts and intervals
+    callbacks
+    promises
+    async await
+    event loop
+
+
+Javscript is synchronous
+
+if we 2 functions code execute top down approach
+
+Js is blocking
+No matter how much time a task is taking , further code will not execute even will code takes 10 minutes or 10seconds
+
+Js is single threaded
+A thread is simply a process that javascript code use to run a task
+Each thread can do one task at a time
+Js has just one thread called main thread for executing the code
+
+This behaviour of js can be problematic , what if we have to retrieve data from database and perform opertaions on it
+
+here we need asynchronous code 
