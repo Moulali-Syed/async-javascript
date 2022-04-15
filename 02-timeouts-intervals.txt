@@ -1,0 +1,86 @@
+Traditional methods javascript has available for running asynchronous code
+
+after a set time period elapsed
+at regular intervals of time
+
+that is
+setTimeout()
+setInterval()
+
+setTimeout function executes a particular block of code once after a specified time elapsed
+
+
+setTimeout(function,duration,param1,param2,....)
+
+1st parameter is a function
+2nd parameter is time
+3rd and so on can be zero parameters passed or can pass any 
+number of parameters so that we can use them when code is executing
+
+function greet(){
+    console.log( 'Hello');
+}
+
+setTimeout(greet,2000)
+
+//logs Hello to console after 2 seconds
+
+
+function greet(name){
+    console.log(`hello ${name}`);
+}
+setTimeout(greet,2000,'apple');
+
+//after 2 seconds hello apple will be printed on console
+
+To clear timeout we can use clearTimeout() method by passing in indentifier returned by setTimeout as a parameter
+
+function greet(){
+    console.log('Hello');
+}
+
+const timeoutId = setTimeout(greet,2000);
+clearTimeout(timeoutId);
+
+//Nothing will be printed to console as greet function will never execute
+
+
+setInterval()
+
+To run a code repeatedly again and again in regular intervals we use setInterval
+setInterval(function,duration,param1,param2,....)
+
+function greet(){
+
+    console.log('Hello');
+}
+setInterval(greet,2000);
+
+//logs hello after every 2 seconds
+
+setInterval runs indefinitly u should do clearInterval
+
+const intervalid = setInterval(greet,2000);
+clearInterval(intervalid)
+
+Noteworthy:
+timeouts and intervals are not part of javascript they are browser functionalities 
+setTimeout and setInterval are names given to them
+
+the duration specified is minimum delay , not guaranteed delay
+if something is taking time it will take more time
+
+It is posible to achieve same effect as setInterval with setTimeout being called recursively
+
+setTimeout(function run(){
+    console.log('hello');
+    setTimeout(run,100);
+},100)
+duration is guaranteed
+
+
+setInterval(function run(){
+    console.log('hello');
+},100)
+The duration interval includes the time taken to execute the code you want to run
+setInterval is always fixed duration
