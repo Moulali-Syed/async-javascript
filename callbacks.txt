@@ -1,0 +1,1 @@
+in js functions are first class objects
